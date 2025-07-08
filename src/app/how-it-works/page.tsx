@@ -200,7 +200,8 @@ export default function HowItWorksPage() {
               Ready to Get Started?
             </h2>
             <p className="text-xl mb-8 text-red-100">
-              Book your mariachi band today and make your event truly special.
+              Booking your mariachi band is simple and straightforward. 
+              Follow these four easy steps to bring authentic Mexican music to your event.
             </p>
             <a
               href="/book"

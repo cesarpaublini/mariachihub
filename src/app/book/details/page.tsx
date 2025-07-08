@@ -1,6 +1,5 @@
 'use client'
 
-import { metadata } from './layout'
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import Header from '@/components/Header'
@@ -16,7 +15,6 @@ import {
   formatCurrency,
   validateStep1,
   validateStep2,
-  getEventTypeIcon
 } from '@/lib/booking'
 
 export default function DetailsPage() {

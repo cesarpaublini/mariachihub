@@ -1,6 +1,5 @@
 'use client'
 
-import { metadata } from './metadata'
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
@@ -164,7 +163,7 @@ export default function AvailabilityPage() {
               </h3>
               <ul className="text-blue-800 space-y-2">
                 <li>• Book at least 2-4 weeks in advance for weekend events</li>
-                <li>• We're available 7 days a week (except Sundays)</li>
+                <li>• We&apos;re available 7 days a week (except Sundays)</li>
                 <li>• Performance times range from 10:00 AM to 9:30 PM</li>
                 <li>• We serve the entire Tampa Bay area and surrounding cities</li>
               </ul>
@@ -176,7 +175,7 @@ export default function AvailabilityPage() {
                 onClick={() => router.push('/book')}
                 className="text-gray-600 hover:text-gray-800 font-medium"
               >
-                ← Back to Booking Info
+                &larr; Back to Booking Info
               </button>
               <button
                 onClick={handleContinue}
