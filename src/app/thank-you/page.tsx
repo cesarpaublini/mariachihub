@@ -8,7 +8,6 @@ import Footer from '@/components/Footer'
 import { BookingData, formatCurrency, getEventTypeName } from '@/lib/booking'
 
 export default function ThankYou() {
-  const router = useRouter()
   const [bookingData, setBookingData] = useState<BookingData | null>(null)
 
   useEffect(() => {

@@ -91,7 +91,7 @@ export default function FAQ() {
               Still Have Questions?
             </h3>
             <p className="text-gray-600 mb-6">
-              Can't find the answer you're looking for? Our team is here to help.
+              Can&apos;t find the answer you&apos;re looking for? Our team is here to help.
             </p>
             <a
               href="/contact"

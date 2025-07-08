@@ -44,7 +44,7 @@ export default function Testimonials() {
             What Our Customers Say
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Don't just take our word for it. Here's what our satisfied customers 
+            Don&apos;t just take our word for it. Here&apos;s what our satisfied customers 
             have to say about their mariachi experience.
           </p>
         </div>
@@ -71,7 +71,7 @@ export default function Testimonials() {
                   </div>
                   
                   <p className="text-gray-700 mb-4 italic">
-                    "{testimonial.text}"
+                    &quot;{testimonial.text}&quot;
                   </p>
                   
                   <div className="flex items-center justify-between">
