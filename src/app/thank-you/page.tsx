@@ -1,8 +1,3 @@
-export const metadata = {
-  title: "Thank You | MariachiHub Booking Confirmation",
-  description: "Your booking is confirmed! We’ll follow up shortly with all the details. Gracias for choosing MariachiHub."
-};
-
 'use client'
 
 import { useState, useEffect } from 'react'
