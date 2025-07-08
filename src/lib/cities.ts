@@ -1,0 +1,1 @@
+export const cities = ['miami', 'tampa', 'los-angeles', 'san-antonio'] 
