@@ -77,7 +77,7 @@ export default function AvailabilityPage() {
             When & Where is Your Event?
           </h1>
           <p className="text-xl text-red-100">
-            Let's start by selecting the date, time, and location for your mariachi performance.
+            Let&apos;s start by selecting the date, time, and location for your mariachi performance.
           </p>
         </div>
       </section>

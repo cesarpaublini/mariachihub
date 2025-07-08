@@ -31,10 +31,10 @@ export default function Tampa() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                  Tampa Bay's Premier Mariachi Service
+                  Tampa Bay&apos;s Premier Mariachi Service
                 </h2>
                 <p className="text-xl text-gray-600 mb-6">
-                  Tampa Bay is home to a vibrant Hispanic community, and we're proud to 
+                  Tampa Bay is home to a vibrant Hispanic community, and we&apos;re proud to 
                   serve this diverse region with authentic mariachi music for all your 
                   special occasions.
                 </p>
@@ -135,7 +135,7 @@ export default function Tampa() {
             <div className="text-center mt-12">
               <div className="bg-white rounded-lg p-8 shadow-md max-w-2xl mx-auto">
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  Don't See Your Area?
+                  Don&apos;t See Your Area?
                 </h3>
                 <p className="text-gray-600 mb-6">
                   We serve the entire Tampa Bay region. Contact us to check availability 
@@ -160,7 +160,7 @@ export default function Tampa() {
                 Popular Tampa Venues
               </h2>
               <p className="text-xl text-gray-600">
-                We've performed at many of Tampa's most popular event venues
+                We&apos;ve performed at many of Tampa&apos;s most popular event venues
               </p>
             </div>
 

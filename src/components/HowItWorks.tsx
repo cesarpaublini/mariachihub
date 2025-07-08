@@ -1,4 +1,3 @@
-import Image from 'next/image'
 
 const steps = [
   {
@@ -24,7 +23,7 @@ const steps = [
   {
     number: '03',
     title: 'Confirm Details',
-    description: 'We\'ll contact you within 24 hours to confirm your booking and discuss any special requests.',
+    description: 'We&apos;ll contact you within 24 hours to confirm your booking and discuss any special requests.',
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />

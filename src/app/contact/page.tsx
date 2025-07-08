@@ -285,7 +285,7 @@ export default function Contact() {
 
               <div className="bg-white rounded-lg p-6 shadow-sm">
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                  Can I make changes to my booking after it's confirmed?
+                  Can I make changes to my booking after it&apos;s confirmed?
                 </h3>
                 <p className="text-gray-600">
                   Yes, you can make changes to your booking up to 7 days before your event. 

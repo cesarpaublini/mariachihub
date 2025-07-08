@@ -102,7 +102,7 @@ export default function ThankYou() {
                 What Happens Next?
               </h2>
               <p className="text-xl text-gray-600">
-                Here's what you can expect from us
+                Here&apos;s what you can expect from us
               </p>
             </div>
 
@@ -113,7 +113,7 @@ export default function ThankYou() {
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Confirmation Email</h3>
                 <p className="text-gray-600">
-                  You'll receive a detailed confirmation email within the next few minutes 
+                  You will receive a detailed confirmation email within the next few minutes 
                   with all your booking details and next steps.
                 </p>
               </div>
@@ -135,7 +135,7 @@ export default function ThankYou() {
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Final Confirmation</h3>
                 <p className="text-gray-600">
-                  One week before your event, we'll send a final confirmation with arrival 
+                  One week before your event, we&apos;ll send a final confirmation with arrival 
                   time, contact information, and last-minute details.
                 </p>
               </div>
@@ -151,7 +151,7 @@ export default function ThankYou() {
                   Need Immediate Assistance?
                 </h2>
                 <p className="text-gray-600">
-                  If you need to speak with someone right away, don't hesitate to call us.
+                  If you need to speak with someone right away, don&apos;t hesitate to call us.
                 </p>
               </div>
 
