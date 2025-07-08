@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -38,7 +37,7 @@ export default function ThankYou() {
             </p>
             <p className="text-lg text-red-100 max-w-2xl mx-auto">
               Thank you for choosing MariachiHub! Your payment has been processed and 
-              your booking is confirmed. We're excited to make your celebration unforgettable.
+              your booking is confirmed. We&apos;re excited to make your celebration unforgettable.
             </p>
           </div>
         </section>
@@ -52,7 +51,7 @@ export default function ThankYou() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-4">
                     <div>
-                      <p className="text-sm text-gray-600">Event Date & Time</p>
+                      <p className="text-sm text-gray-600">Event Date &amp; Time</p>
                       <p className="font-semibold text-lg">{bookingData.date} at {bookingData.time}</p>
                     </div>
                     <div>
