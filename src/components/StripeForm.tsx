@@ -25,7 +25,7 @@ const cardElementOptions = {
   },
 }
 
-export default function StripeForm({ bookingData, onSuccess, onError }: StripeFormProps) {
+export default function StripeForm({ bookingData, onSuccess }: StripeFormProps) {
   const stripe = useStripe()
   const elements = useElements()
   const [isProcessing, setIsProcessing] = useState(false)
@@ -79,7 +79,7 @@ export default function StripeForm({ bookingData, onSuccess, onError }: StripeFo
       } else if (paymentIntent?.status === 'succeeded') {
         onSuccess(paymentIntent.id)
       }
-    } catch (err) {
+    } catch {
       setError('An unexpected error occurred. Please try again.')
     } finally {
       setIsProcessing(false)

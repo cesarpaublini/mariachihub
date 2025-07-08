@@ -102,7 +102,7 @@ export default function HowItWorksPage() {
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">Book Your Date</h3>
                   <p className="text-gray-600 mb-4">
                     Our booking form is designed to be quick and easy. Simply fill out the 
-                    required information and we'll handle the rest.
+                    required information and we&apos;ll handle the rest.
                   </p>
                   <p className="text-gray-600">
                     We recommend booking at least 2-4 weeks in advance, especially for 
@@ -180,7 +180,7 @@ export default function HowItWorksPage() {
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">Enjoy Your Event</h3>
                   <p className="text-gray-600 mb-4">
                     On your special day, our professional mariachi band will arrive 
-                    on time and ready to perform. They'll handle all the setup and 
+                    on time and ready to perform. They&apos;ll handle all the setup and 
                     ensure your event runs smoothly.
                   </p>
                   <p className="text-gray-600">

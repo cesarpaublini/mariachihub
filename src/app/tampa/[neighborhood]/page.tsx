@@ -50,7 +50,7 @@ export default function NeighborhoodPage({ params }: NeighborhoodPageProps) {
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">Neighborhood Not Found</h1>
             <p className="text-xl text-gray-600 mb-8">
-              The neighborhood "{neighborhoodName}" was not found in our service area.
+              The neighborhood &quot;{neighborhoodName}&quot; was not found in our service area.
             </p>
             <Link
               href="/tampa"
@@ -90,12 +90,12 @@ export default function NeighborhoodPage({ params }: NeighborhoodPageProps) {
                   Mariachi Services in {neighborhoodName}
                 </h2>
                 <p className="text-xl text-gray-600 mb-6">
-                  {neighborhoodName} is a vibrant part of the Tampa Bay area, and we're 
+                  {neighborhoodName} is a vibrant part of the Tampa Bay area, and we&apos;re 
                   proud to provide authentic mariachi music for all your special occasions 
                   in this wonderful neighborhood.
                 </p>
                 <p className="text-xl text-gray-600 mb-8">
-                  Whether you're hosting a wedding, birthday party, corporate event, or 
+                  Whether you&apos;re hosting a wedding, birthday party, corporate event, or 
                   any other celebration, our professional mariachi bands will bring the 
                   authentic sounds of Mexico to your {neighborhoodName} event.
                 </p>
