@@ -1,44 +1,19 @@
+
 import Link from 'next/link'
+import React from 'react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { tampaNeighborhoods } from '@/lib/tampaNeighborhoods'
-
-interface NeighborhoodPageProps {
-  params: {
-    neighborhood: string
-  }
+export async function generateStaticParams() {
+  return tampaNeighborhoods.map((neighborhood) => ({
+    neighborhood: neighborhood.replace(' ', '-')
+  }))
 }
 
-export function generateMetadata({ params }: { params: { neighborhood: string } }) {
-  const { neighborhood } = params;
-  if (neighborhood === 'ybor-city') {
-    return {
-      title: 'Mariachi Bands in Ybor City, Tampa | MariachiHub',
-      description: 'Celebrate with vibrant mariachi music in Ybor City. Find top-rated performers for your next event — available to book now.'
-    };
-  }
-  if (neighborhood === 'south-tampa') {
-    return {
-      title: 'South Tampa Mariachi Bands | Book Local Talent',
-      description: 'Hire mariachi bands in South Tampa for private parties, birthdays, or surprise serenades. Book online in minutes.'
-    };
-  }
-  if (neighborhood === 'clearwater') {
-    return {
-      title: 'Clearwater Mariachi Bands | Live Music for Events',
-      description: 'Bring live mariachi music to your Clearwater celebration. Explore options for weddings, proposals, or corporate events.'
-    };
-  }
-  return {
-    title: `Mariachi in ${neighborhood.replace('-', ' ')} | MariachiHub`,
-    description: `Book professional mariachi bands in ${neighborhood.replace('-', ' ')}. Weddings, parties, and more.`
-  };
-}
+export default function Page({ params }: { params: { neighborhood: string } }) {
+  const neighborhood = params.neighborhood.replace('-', ' ');
+  const neighborhoodName = neighborhood;
 
-export default function NeighborhoodPage({ params }: NeighborhoodPageProps) {
-  const { neighborhood } = params
-  const neighborhoodName = neighborhood.replace('-', ' ')
-  
   // Check if neighborhood exists in our data
   const isValidNeighborhood = tampaNeighborhoods.includes(neighborhood)
   
@@ -345,4 +320,4 @@ export default function NeighborhoodPage({ params }: NeighborhoodPageProps) {
       <Footer />
     </div>
   )
-} 
+}
