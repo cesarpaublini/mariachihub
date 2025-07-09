@@ -1,44 +1,45 @@
 
+import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 import Link from 'next/link'
 import React from 'react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { tampaNeighborhoods } from '@/lib/tampaNeighborhoods'
+
+// ✅ Static paths generation for build
 export async function generateStaticParams() {
   return tampaNeighborhoods.map((neighborhood) => ({
-    neighborhood: neighborhood.replace(' ', '-')
-  }))
+    neighborhood,
+  }));
 }
 
-export default function Page({ params }: { params: { neighborhood: string } }) {
-  const neighborhood = params.neighborhood.replace('-', ' ');
-  const neighborhoodName = neighborhood;
+// ✅ Metadata for each page
+export function generateMetadata({ params }: { params: { neighborhood: string } }): Metadata {
+  const { neighborhood } = params;
 
-  // Check if neighborhood exists in our data
-  const isValidNeighborhood = tampaNeighborhoods.includes(neighborhood)
-  
-  if (!isValidNeighborhood) {
-    return (
-      <div className="min-h-screen">
-        <Header />
-        <main className="py-20">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">Neighborhood Not Found</h1>
-            <p className="text-xl text-gray-600 mb-8">
-              The neighborhood &quot;{neighborhoodName}&quot; was not found in our service area.
-            </p>
-            <Link
-              href="/tampa"
-              className="inline-block bg-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors"
-            >
-              View All Tampa Neighborhoods
-            </Link>
-          </div>
-        </main>
-        <Footer />
-      </div>
-    )
+  if (!tampaNeighborhoods.includes(neighborhood)) {
+    return {
+      title: 'Neighborhood Not Found',
+    };
   }
+
+  const name = neighborhood.replace(/-/g, ' ');
+  return {
+    title: `Mariachi in ${name} | MariachiHub`,
+    description: `Book mariachi bands in ${name}. Weddings, events, and more.`,
+  };
+}
+
+// ✅ Page content
+export default function NeighborhoodPage({ params }: { params: { neighborhood: string } }) {
+  const { neighborhood } = params;
+
+  if (!tampaNeighborhoods.includes(neighborhood)) {
+    notFound();
+  }
+
+  const name = neighborhood.replace(/-/g, ' ');
 
   return (
     <div className="min-h-screen">
@@ -48,10 +49,10 @@ export default function Page({ params }: { params: { neighborhood: string } }) {
         <section className="bg-gradient-to-r from-red-600 to-red-800 text-white py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Mariachi in {neighborhoodName}
+              Mariachi in {name}
             </h1>
             <p className="text-xl md:text-2xl max-w-3xl mx-auto text-red-100">
-              Professional mariachi bands serving {neighborhoodName}, Tampa
+              Professional mariachi bands serving {name}, Tampa
             </p>
           </div>
         </section>
@@ -62,23 +63,23 @@ export default function Page({ params }: { params: { neighborhood: string } }) {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                  Mariachi Services in {neighborhoodName}
+                  Mariachi Services in {name}
                 </h2>
                 <p className="text-xl text-gray-600 mb-6">
-                  {neighborhoodName} is a vibrant part of the Tampa Bay area, and we&apos;re 
+                  {name} is a vibrant part of the Tampa Bay area, and we&apos;re 
                   proud to provide authentic mariachi music for all your special occasions 
                   in this wonderful neighborhood.
                 </p>
                 <p className="text-xl text-gray-600 mb-8">
                   Whether you&apos;re hosting a wedding, birthday party, corporate event, or 
                   any other celebration, our professional mariachi bands will bring the 
-                  authentic sounds of Mexico to your {neighborhoodName} event.
+                  authentic sounds of Mexico to your {name} event.
                 </p>
                 
                 <div className="grid grid-cols-2 gap-6">
                   <div className="text-center">
                     <div className="text-3xl font-bold text-red-600 mb-2">50+</div>
-                    <div className="text-gray-600">Events in {neighborhoodName}</div>
+                    <div className="text-gray-600">Events in {name}</div>
                   </div>
                   <div className="text-center">
                     <div className="text-3xl font-bold text-red-600 mb-2">24hr</div>
@@ -88,7 +89,7 @@ export default function Page({ params }: { params: { neighborhood: string } }) {
               </div>
               
               <div className="bg-gray-50 rounded-lg p-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Services in {neighborhoodName}</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">Services in {name}</h3>
                 <ul className="space-y-4">
                   <li className="flex items-start space-x-3">
                     <svg className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -137,7 +138,7 @@ export default function Page({ params }: { params: { neighborhood: string } }) {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Pricing for {neighborhoodName}
+                Pricing for {name}
               </h2>
               <p className="text-xl text-gray-600">
                 Competitive rates for mariachi services in your neighborhood
@@ -197,13 +198,19 @@ export default function Page({ params }: { params: { neighborhood: string } }) {
                     <svg className="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
-                    <span>Song requests included</span>
+                    <span>Extended song list</span>
                   </li>
                   <li className="flex items-center">
                     <svg className="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
-                    <span>Enhanced sound system</span>
+                    <span>Professional attire</span>
+                  </li>
+                  <li className="flex items-center">
+                    <svg className="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <span>Sound equipment included</span>
                   </li>
                 </ul>
                 <Link
@@ -229,13 +236,25 @@ export default function Page({ params }: { params: { neighborhood: string } }) {
                     <svg className="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
-                    <span>Unlimited song requests</span>
+                    <span>Full song repertoire</span>
                   </li>
                   <li className="flex items-center">
                     <svg className="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
-                    <span>Professional sound system</span>
+                    <span>Professional attire</span>
+                  </li>
+                  <li className="flex items-center">
+                    <svg className="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <span>Full sound system</span>
+                  </li>
+                  <li className="flex items-center">
+                    <svg className="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <span>Custom song requests</span>
                   </li>
                 </ul>
                 <Link
@@ -249,75 +268,34 @@ export default function Page({ params }: { params: { neighborhood: string } }) {
           </div>
         </section>
 
-        {/* Other Neighborhoods Section */}
-        <section className="py-16 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                Other Tampa Neighborhoods
-              </h2>
-              <p className="text-xl text-gray-600">
-                Explore mariachi services in other Tampa areas
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {tampaNeighborhoods
-                .filter(n => n !== neighborhood)
-                .slice(0, 6)
-                .map((neighborhood, index) => (
-                  <Link
-                    key={index}
-                    href={`/tampa/${neighborhood}`}
-                    className="bg-gray-50 rounded-lg p-6 hover:bg-gray-100 transition-colors group"
-                  >
-                    <div className="flex items-center justify-between">
-                      <h3 className="text-lg font-semibold text-gray-900 capitalize">
-                        {neighborhood.replace('-', ' ')}
-                      </h3>
-                      <svg 
-                        className="w-5 h-5 text-red-600 group-hover:translate-x-1 transition-transform" 
-                        fill="none" 
-                        stroke="currentColor" 
-                        viewBox="0 0 24 24"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </div>
-                  </Link>
-                ))}
-            </div>
-
-            <div className="text-center mt-8">
-              <Link
-                href="/tampa"
-                className="inline-block bg-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors"
-              >
-                View All Tampa Neighborhoods
-              </Link>
-            </div>
-          </div>
-        </section>
-
         {/* CTA Section */}
         <section className="py-16 bg-red-600 text-white">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Book Your {neighborhoodName} Mariachi Today
+              Ready to Book Your Mariachi in {name}?
             </h2>
-            <p className="text-xl mb-8 text-red-100">
-              Get a free quote for your {neighborhoodName} event
+            <p className="text-xl mb-8 max-w-3xl mx-auto">
+              Don&apos;t wait! Book your mariachi band today and make your {name} event 
+              truly special with authentic Mexican music and culture.
             </p>
-            <Link
-              href="/book"
-              className="inline-block bg-white text-red-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors"
-            >
-              Get Free Quote
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/book"
+                className="bg-white text-red-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+              >
+                Book Now
+              </Link>
+              <Link
+                href="/contact"
+                className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-red-600 transition-colors"
+              >
+                Contact Us
+              </Link>
+            </div>
           </div>
         </section>
       </main>
       <Footer />
     </div>
-  )
+  );
 }
