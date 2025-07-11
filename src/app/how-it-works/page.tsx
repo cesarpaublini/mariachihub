@@ -50,15 +50,15 @@ export default function HowItWorksPage() {
                   <ul className="space-y-2 text-gray-600">
                     <li className="flex items-center space-x-2">
                       <span className="w-2 h-2 bg-red-600 rounded-full"></span>
-                      <span><strong>Basic Package:</strong> Perfect for intimate gatherings</span>
+                      <span><strong>Serenata Package:</strong> Perfect for birthdays & love tributes</span>
                     </li>
                     <li className="flex items-center space-x-2">
                       <span className="w-2 h-2 bg-red-600 rounded-full"></span>
-                      <span><strong>Standard Package:</strong> Ideal for most celebrations</span>
+                      <span><strong>Weekday Special:</strong> Limited time offer for off-peak bookings</span>
                     </li>
                     <li className="flex items-center space-x-2">
                       <span className="w-2 h-2 bg-red-600 rounded-full"></span>
-                      <span><strong>Premium Package:</strong> For grand events and special occasions</span>
+                      <span><strong>Signature Package:</strong> Great for weddings & private events</span>
                     </li>
                   </ul>
                 </div>
@@ -67,15 +67,15 @@ export default function HowItWorksPage() {
                   <div className="space-y-3">
                     <div className="flex justify-between">
                       <span className="text-gray-800">Musicians</span>
-                      <span className="font-semibold text-gray-800">3-7 members</span>
+                      <span className="font-semibold text-gray-800">5-piece band</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-800">Duration</span>
-                      <span className="font-semibold text-gray-800">1-3 hours</span>
+                      <span className="font-semibold text-gray-800">30 min - 5 hours</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-800">Travel Distance</span>
-                      <span className="font-semibold text-gray-800">20-50 miles</span>
+                      <span className="font-semibold text-gray-800">30 miles</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-800">Song Requests</span>

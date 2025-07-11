@@ -137,7 +137,11 @@ export default function DetailsPage() {
                         <div className="text-2xl font-bold text-red-600">
                           {formatCurrency(package_.price)}
                         </div>
-                        <div className="text-sm text-gray-500">per hour</div>
+                        <div className="text-sm text-gray-500">
+                          {package_.id === 'serenata' || package_.id === 'weekday' ? '30 minutes' : 
+                           package_.id === 'signature' ? '1 hour minimum' :
+                           package_.id.startsWith('extended') ? 'fixed rate' : 'per hour'}
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -152,11 +156,11 @@ export default function DetailsPage() {
               <div className="mt-6 p-4 bg-gray-50 rounded-lg">
                 <h4 className="font-semibold text-gray-900 mb-2">All Packages Include:</h4>
                 <ul className="text-sm text-gray-600 space-y-1">
-                  <li>• Professional mariachi musicians</li>
-                  <li>• Traditional costumes and attire</li>
-                  <li>• Basic sound equipment</li>
-                  <li>• Travel within service area</li>
-                  <li>• Song requests (Standard & Premium)</li>
+                  <li>• 5-piece professional mariachi band</li>
+                  <li>• Professional attire and traditional costumes</li>
+                  <li>• Sound equipment and travel within service area</li>
+                  <li>• Song requests and tailored performances</li>
+                  <li>• Serving Tampa Bay and surrounding areas</li>
                 </ul>
               </div>
             </div>

@@ -3,53 +3,61 @@ import Image from 'next/image'
 
 const packages = [
   {
-    name: 'Quinceañera Package',
-    price: '$599',
-    duration: '3 hours',
+    name: 'Serenata Package',
+    price: '$450',
+    duration: '30 minutes',
     image: '/quinceanera-celebration.jpg',
-    alt: 'Colorful quinceañera celebration with mariachi',
+    alt: 'Romantic serenata performance with mariachi',
     features: [
-      '6-piece mariachi band',
-      'Traditional quinceañera songs',
-      'Professional sound system',
-      'Travel within 30 miles',
-      'Traditional costumes',
-      'Unlimited song requests',
-      'Background music between sets'
+      '5-piece professional mariachi',
+      'Surprise performance',
+      'Romantic songs',
+      'Best for birthdays & love tributes',
+      'Available across Tampa Bay',
+      'Professional attire',
+      'Travel within service area'
     ],
-    popular: false
+    popular: false,
+    badge: 'Popular for Birthdays',
+    order: 'order-1 md:order-1'
   },
   {
-    name: 'Wedding Package',
-    price: '$499',
-    duration: '2 hours',
+    name: 'Signature Package',
+    price: '$699',
+    duration: '1 hour minimum',
     image: '/wedding-performance.jpg',
     alt: 'Mariachi band performing at a beautiful wedding',
     features: [
       '5-piece mariachi band',
-      'Traditional wedding songs',
-      'Enhanced sound system',
-      'Travel within 30 miles',
+      'Tailored song list',
       'Professional attire',
-      'Song requests included'
+      'Travel within 30 miles',
+      'Great for weddings, birthdays & private events',
+      'Serving Tampa, Brandon, Riverview',
+      'Professional sound system'
     ],
-    popular: true
+    popular: true,
+    badge: 'Most Booked',
+    order: 'order-2 md:order-2'
   },
   {
-    name: 'Corporate Package',
+    name: 'Weekday Special',
     price: '$399',
-    duration: '1.5 hours',
+    duration: '30 minutes',
     image: '/corporate-event.jpg',
     alt: 'Professional mariachi performance at corporate event',
     features: [
-      '4-piece mariachi band',
-      'Professional business songs',
-      'Basic sound equipment',
-      'Travel within 20 miles',
+      '5-piece mariachi band',
+      'Serenata pricing for off-peak',
+      'Mon–Thu or Fri mornings',
+      'Limited availability',
+      'Valid in greater Tampa',
       'Professional attire',
-      'Background music included'
+      'Same quality performance'
     ],
-    popular: false
+    popular: false,
+    badge: 'Limited Time Offer',
+    order: 'order-3 md:order-3'
   }
 ]
 
@@ -71,15 +79,17 @@ export default function PackageList() {
           {packages.map((pkg, index) => (
             <div 
               key={index}
-              className={`relative bg-white rounded-lg shadow-lg overflow-visible ${
-                pkg.popular ? 'ring-2 ring-red-500 transform scale-105 z-10 mt-8' : ''
+              className={`relative bg-white rounded-lg shadow-lg overflow-visible ${pkg.order} ${
+                pkg.popular ? 'ring-2 ring-red-500 transform scale-105 z-10' : ''
               }`}
             >
-              {/* Featured Ribbon - now above the card, not inside image */}
-              {pkg.popular && (
-                <div className="absolute left-1/2 -top-6 -translate-x-1/2 z-30 pointer-events-none">
-                  <span className="bg-red-600 text-white px-6 py-2 rounded-full text-base font-semibold shadow-lg tracking-wide drop-shadow-md">
-                    Most Popular
+              {/* Featured Ribbon - improved positioning */}
+              {pkg.badge && (
+                <div className="absolute left-1/2 -top-4 -translate-x-1/2 z-30 pointer-events-none">
+                  <span className={`px-4 py-2 rounded-full text-sm font-semibold shadow-lg tracking-wide drop-shadow-md whitespace-nowrap ${
+                    pkg.popular ? 'bg-red-600 text-white' : 'bg-green-600 text-white'
+                  }`}>
+                    {pkg.badge}
                   </span>
                 </div>
               )}

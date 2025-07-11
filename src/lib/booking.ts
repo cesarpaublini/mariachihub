@@ -36,10 +36,12 @@ export const initialBookingData: BookingData = {
 }
 
 export const groupSizes = [
-  { id: '3', name: '3 Musicians', price: 299, description: 'Perfect for intimate gatherings' },
-  { id: '4', name: '4 Musicians', price: 399, description: 'Great for small celebrations' },
-  { id: '6', name: '6 Musicians', price: 599, description: 'Ideal for medium events' },
-  { id: '8', name: '8+ Musicians', price: 799, description: 'For grand celebrations' },
+  { id: 'serenata', name: 'Serenata Package', price: 450, description: '30 minutes - Perfect for birthdays & love tributes' },
+  { id: 'weekday', name: 'Weekday Special', price: 399, description: '30 minutes - Limited time offer for off-peak bookings' },
+  { id: 'signature', name: 'Signature Package', price: 699, description: '1 hour minimum - Great for weddings & private events' },
+  { id: 'extended3', name: 'Extended Package (3 Hours)', price: 1899, description: '3 hours - Ideal for full-day celebrations' },
+  { id: 'extended4', name: 'Extended Package (4 Hours)', price: 2499, description: '4 hours - Perfect for continuous entertainment' },
+  { id: 'extended5', name: 'Extended Package (5 Hours)', price: 2999, description: '5 hours - Ultimate celebration experience' },
 ]
 
 export const eventTypes = [
