@@ -39,7 +39,7 @@ export default function NeighborhoodPage({ params }: { params: { neighborhood: s
     notFound();
   }
 
-  const name = neighborhood.replace(/-/g, ' ');
+  const name = neighborhood.replace(/-/g, ' ').replace(/\b\w/g, char => char.toUpperCase());
 
   return (
     <div className="min-h-screen">
@@ -206,11 +206,7 @@ export default function NeighborhoodPage({ params }: { params: { neighborhood: s
                     <svg className="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
-<<<<<<< HEAD
                     <span>Extended song list</span>
-=======
-                    <span>Tailored song list</span>
->>>>>>> update-pricing
                   </li>
                   <li className="flex items-center">
                     <svg className="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
@@ -222,17 +218,13 @@ export default function NeighborhoodPage({ params }: { params: { neighborhood: s
                     <svg className="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
-<<<<<<< HEAD
                     <span>Sound equipment included</span>
-=======
-                    <span>Travel within 30 miles</span>
                   </li>
                   <li className="flex items-center">
                     <svg className="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
                     <span>Serving Tampa, Brandon, Riverview</span>
->>>>>>> update-pricing
                   </li>
                 </ul>
                 <Link
@@ -264,27 +256,19 @@ export default function NeighborhoodPage({ params }: { params: { neighborhood: s
                     <svg className="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
-<<<<<<< HEAD
-                    <span>Full song repertoire</span>
-=======
                     <span>Serenata pricing for off-peak</span>
->>>>>>> update-pricing
                   </li>
                   <li className="flex items-center">
                     <svg className="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
-<<<<<<< HEAD
                     <span>Professional attire</span>
-=======
                     <span>Limited availability</span>
->>>>>>> update-pricing
                   </li>
                   <li className="flex items-center">
                     <svg className="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
-<<<<<<< HEAD
                     <span>Full sound system</span>
                   </li>
                   <li className="flex items-center">
@@ -292,9 +276,7 @@ export default function NeighborhoodPage({ params }: { params: { neighborhood: s
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
                     <span>Custom song requests</span>
-=======
                     <span>Valid in greater Tampa</span>
->>>>>>> update-pricing
                   </li>
                 </ul>
                 <Link
@@ -306,8 +288,6 @@ export default function NeighborhoodPage({ params }: { params: { neighborhood: s
               </div>
             </div>
 
-<<<<<<< HEAD
-=======
             {/* Extended Packages Section */}
             <div className="mt-12">
               <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Extended Packages</h3>
@@ -353,7 +333,6 @@ export default function NeighborhoodPage({ params }: { params: { neighborhood: s
           </div>
         </section>
 
->>>>>>> update-pricing
         {/* CTA Section */}
         <section className="py-16 bg-red-600 text-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
