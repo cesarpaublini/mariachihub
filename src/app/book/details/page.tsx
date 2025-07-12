@@ -17,7 +17,6 @@ import {
   validateStep1,
   validateStep2,
   getGroupSizeName,
-  getEventTypeName,
 } from '@/lib/booking'
 
 export default function DetailsPage() {

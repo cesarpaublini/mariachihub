@@ -25,8 +25,9 @@ export async function POST(req: Request) {
     })
 
     return NextResponse.json({ clientSecret: paymentIntent.client_secret })
-  } catch (error: any) {
-    console.error('Stripe Error:', error.message)
-    return NextResponse.json({ error: error.message }, { status: 500 })
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Unknown error occurred'
+    console.error('Stripe Error:', message)
+    return NextResponse.json({ error: message }, { status: 500 })
   }
 }
