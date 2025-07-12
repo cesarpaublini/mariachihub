@@ -15,7 +15,8 @@ import {
   validateStep1,
   validateStep2,
   formatCurrency,
-  getEventTypeName
+  getEventTypeName,
+  getGroupSizeName
 } from '@/lib/booking'
 
 // Initialize Stripe (replace with your publishable key)
@@ -120,7 +121,7 @@ export default function CheckoutPage() {
                     <div className="flex justify-between items-start">
                       <div>
                         <h4 className="font-semibold text-gray-900">
-                          {bookingData.groupSize} Musicians
+                          {getGroupSizeName(bookingData.groupSize || '')}
                         </h4>
                         <p className="text-sm text-black">
                           {getEventTypeName(bookingData.eventType || '')}

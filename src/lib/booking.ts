@@ -109,4 +109,9 @@ export const getEventTypeIcon = (eventTypeId: string): string => {
 export const getEventTypeName = (eventTypeId: string): string => {
   const eventType = eventTypes.find(et => et.id === eventTypeId)
   return eventType?.name || 'Other'
+}
+
+export const getGroupSizeName = (groupSizeId: string): string => {
+  const groupSize = groupSizes.find(gs => gs.id === groupSizeId)
+  return groupSize?.name || 'Custom Package'
 } 

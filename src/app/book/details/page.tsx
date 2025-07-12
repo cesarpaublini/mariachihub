@@ -16,6 +16,8 @@ import {
   formatCurrency,
   validateStep1,
   validateStep2,
+  getGroupSizeName,
+  getEventTypeName,
 } from '@/lib/booking'
 
 export default function DetailsPage() {
@@ -96,7 +98,7 @@ export default function DetailsPage() {
             event_date: bookingData.date,
             start_time: bookingData.time,
             occasion: bookingData.eventType,
-            package: bookingData.groupSize,
+            package: getGroupSizeName(bookingData.groupSize || ''),
           }),
         });
       } catch (err) {
