@@ -6,6 +6,7 @@ import Image from 'next/image'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import BookingSteps from '@/components/BookingSteps'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import { 
   BookingData, 
   initialBookingData, 
@@ -54,9 +55,16 @@ export default function AvailabilityPage() {
   const maxDate = new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString().split('T')[0]
   const availableCities = getAvailableCities()
 
+  const breadcrumbItems = [
+    { label: 'Home', href: '/' },
+    { label: 'Book', href: '/book' },
+    { label: 'Date & Time', current: true }
+  ];
+
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
+      <Breadcrumbs items={breadcrumbItems} />
       <BookingSteps currentStep={1} />
       
       <section className="relative text-white py-16 overflow-hidden">

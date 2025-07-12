@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import BookingSteps from '@/components/BookingSteps'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import { 
   BookingData, 
   initialBookingData, 
@@ -94,9 +95,17 @@ export default function DetailsPage() {
     )
   }
 
+  const breadcrumbItems = [
+    { label: 'Home', href: '/' },
+    { label: 'Book', href: '/book' },
+    { label: 'Date & Time', href: '/book/availability' },
+    { label: 'Package & Details', current: true }
+  ];
+
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
+      <Breadcrumbs items={breadcrumbItems} />
       <BookingSteps currentStep={2} />
       
       <main className="py-12">

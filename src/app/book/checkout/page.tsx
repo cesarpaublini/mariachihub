@@ -8,6 +8,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import BookingSteps from '@/components/BookingSteps'
 import StripeForm from '@/components/StripeForm'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import { 
   BookingData, 
   initialBookingData, 
@@ -72,9 +73,18 @@ export default function CheckoutPage() {
     )
   }
 
+  const breadcrumbItems = [
+    { label: 'Home', href: '/' },
+    { label: 'Book', href: '/book' },
+    { label: 'Date & Time', href: '/book/availability' },
+    { label: 'Package & Details', href: '/book/details' },
+    { label: 'Payment', current: true }
+  ];
+
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
+      <Breadcrumbs items={breadcrumbItems} />
       <BookingSteps currentStep={3} />
       
       <main className="py-12">

@@ -1,5 +1,6 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import Image from 'next/image'
 
 export const metadata = {
@@ -8,9 +9,15 @@ export const metadata = {
 };
 
 export default function About() {
+  const breadcrumbItems = [
+    { label: 'Home', href: '/' },
+    { label: 'About', current: true }
+  ];
+
   return (
     <div className="min-h-screen">
       <Header />
+      <Breadcrumbs items={breadcrumbItems} />
       <main>
         {/* Hero Section */}
         <section className="relative text-white py-20 overflow-hidden">

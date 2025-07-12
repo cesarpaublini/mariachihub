@@ -5,6 +5,7 @@ import Link from 'next/link'
 import React from 'react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import { tampaNeighborhoods } from '@/lib/tampaNeighborhoods'
 
 // ✅ Static paths generation for build
@@ -41,9 +42,16 @@ export default function NeighborhoodPage({ params }: { params: { neighborhood: s
 
   const name = neighborhood.replace(/-/g, ' ').replace(/\b\w/g, char => char.toUpperCase());
 
+  const breadcrumbItems = [
+    { label: 'Home', href: '/' },
+    { label: 'Tampa', href: '/tampa' },
+    { label: name, current: true }
+  ];
+
   return (
     <div className="min-h-screen">
       <Header />
+      <Breadcrumbs items={breadcrumbItems} />
       <main>
         {/* Hero Section */}
         <section className="bg-gradient-to-r from-red-600 to-red-800 text-white py-20">

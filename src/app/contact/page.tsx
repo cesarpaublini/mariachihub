@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import Image from 'next/image'
 
 export default function Contact() {
@@ -29,9 +30,15 @@ export default function Contact() {
     alert('Thank you for your message! We\'ll get back to you soon.')
   }
 
+  const breadcrumbItems = [
+    { label: 'Home', href: '/' },
+    { label: 'Contact', current: true }
+  ];
+
   return (
     <div className="min-h-screen">
       <Header />
+      <Breadcrumbs items={breadcrumbItems} />
       <main>
         {/* Hero Section */}
         <section className="relative text-white py-20 overflow-hidden">

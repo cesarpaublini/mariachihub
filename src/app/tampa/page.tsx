@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import { tampaNeighborhoods } from '@/lib/tampaNeighborhoods'
 
 export const metadata = {
@@ -9,9 +10,15 @@ export const metadata = {
 };
 
 export default function Tampa() {
+  const breadcrumbItems = [
+    { label: 'Home', href: '/' },
+    { label: 'Tampa', current: true }
+  ];
+
   return (
     <div className="min-h-screen">
       <Header />
+      <Breadcrumbs items={breadcrumbItems} />
       <main>
         {/* Hero Section */}
         <section className="bg-gradient-to-r from-red-600 to-red-800 text-white py-20">
