@@ -12,6 +12,7 @@ export interface BookingData {
   fullName: string | null
   email: string | null
   phone: string | null
+  eventAddress: string | null // Address of the event
   notes: string | null
   
   // Step 3: Payment
@@ -29,6 +30,7 @@ export const initialBookingData: BookingData = {
   fullName: null,
   email: null,
   phone: null,
+  eventAddress: null,
   notes: null,
   paymentIntentId: null,
   totalAmount: null,
@@ -94,7 +96,8 @@ export const validateStep2 = (data: Partial<BookingData>): boolean => {
     data.groupSize &&
     data.eventType &&
     data.fullName &&
-    data.email
+    data.email &&
+    data.eventAddress // Require event address
   )
 }
 

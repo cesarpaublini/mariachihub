@@ -111,6 +111,14 @@ export default function StripeForm({ bookingData, onSuccess }: StripeFormProps) 
               {bookingData.city?.replace('-', ' ')}
             </span>
           </div>
+          {bookingData.eventAddress && (
+            <div className="flex justify-between">
+              <span className="text-gray-700">Event Address:</span>
+              <span className="font-medium text-black">
+                {bookingData.eventAddress}
+              </span>
+            </div>
+          )}
           <div className="flex justify-between">
             <span className="text-gray-700">Package:</span>
             <span className="font-medium text-black">

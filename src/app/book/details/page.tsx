@@ -73,6 +73,9 @@ export default function DetailsPage() {
     } else if (!/\S+@\S+\.\S+/.test(bookingData.email)) {
       newErrors.email = 'Please enter a valid email address'
     }
+    if (!bookingData.eventAddress?.trim()) {
+      newErrors.eventAddress = 'Please enter the address of the event'
+    }
 
     setErrors(newErrors)
     return Object.keys(newErrors).length === 0
@@ -256,6 +259,25 @@ export default function DetailsPage() {
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent placeholder-gray-500 text-black"
                     placeholder="(555) 123-4567"
                   />
+                </div>
+
+                {/* Event Address */}
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Event Address *
+                  </label>
+                  <input
+                    type="text"
+                    value={bookingData.eventAddress || ''}
+                    onChange={(e) => updateBookingData({ eventAddress: e.target.value })}
+                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent placeholder-gray-500 text-black ${
+                      errors.eventAddress ? 'border-red-500' : 'border-gray-300'
+                    }`}
+                    placeholder="Address of the event venue"
+                  />
+                  {errors.eventAddress && (
+                    <p className="text-red-500 text-sm mt-1">{errors.eventAddress}</p>
+                  )}
                 </div>
 
                 <div>

@@ -58,6 +58,12 @@ export default function ThankYou() {
                       <p className="text-sm text-gray-600">Location</p>
                       <p className="font-semibold text-lg capitalize">{bookingData.city?.replace('-', ' ')}</p>
                     </div>
+                    {bookingData.eventAddress && (
+                      <div>
+                        <p className="text-sm text-gray-600">Event Address</p>
+                        <p className="font-semibold text-lg">{bookingData.eventAddress}</p>
+                      </div>
+                    )}
                     <div>
                       <p className="text-sm text-gray-600">Package</p>
                       <p className="font-semibold text-lg">{bookingData.groupSize} Musicians</p>
