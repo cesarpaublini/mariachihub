@@ -163,7 +163,7 @@ export default function AvailabilityPage() {
               </h3>
               <ul className="text-blue-800 space-y-2">
                 <li>• Book at least 2-4 weeks in advance for weekend events</li>
-                <li>• We&apos;re available 7 days a week (except Sundays)</li>
+                <li>• We&apos;re available 7 days a week</li>
                 <li>• Performance times range from 10:00 AM to 9:30 PM</li>
                 <li>• We serve the entire Tampa Bay area and surrounding cities</li>
               </ul>
