@@ -81,8 +81,24 @@ export default function DetailsPage() {
     return Object.keys(newErrors).length === 0
   }
 
-  const handleContinue = () => {
+  const handleContinue = async () => {
     if (validateForm()) {
+      // Save lead to Supabase via API
+      try {
+        await fetch('/api/save-lead', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: bookingData.fullName,
+            email: bookingData.email,
+            phone: bookingData.phone,
+            city: bookingData.city,
+          }),
+        });
+      } catch (err) {
+        // Optionally log or handle error, but don't block navigation
+        console.error('Failed to save lead:', err);
+      }
       router.push('/book/checkout')
     }
   }
