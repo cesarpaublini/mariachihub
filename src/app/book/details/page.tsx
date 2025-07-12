@@ -93,6 +93,10 @@ export default function DetailsPage() {
             email: bookingData.email,
             phone: bookingData.phone,
             city: bookingData.city,
+            event_date: bookingData.date,
+            start_time: bookingData.time,
+            occasion: bookingData.eventType,
+            package: bookingData.groupSize,
           }),
         });
       } catch (err) {

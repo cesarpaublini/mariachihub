@@ -3,16 +3,45 @@ import { NextResponse } from 'next/server';
 import { supabase } from '../../../lib/supabaseClient';
 
 export async function POST(req: Request) {
-  const body = await req.json();
-  const { name, email, phone, city } = body;
+  try {
+    const body = await req.json();
+    console.log('📥 Incoming Lead:', body);
 
-  const { data, error } = await supabase
-    .from('leads')
-    .insert([{ name, email, phone, city, created_at: new Date().toISOString() }]);
+    const {
+      name,
+      email,
+      phone,
+      city,
+      event_date,
+      start_time,
+      occasion,
+      package: packageType,
+    } = body;
 
-  if (error) {
-    return NextResponse.json({ error: error.message }, { status: 500 });
+    const { data, error } = await supabase
+      .from('leads')
+      .insert([{
+        name,
+        email,
+        phone,
+        city,
+        event_date,
+        start_time,
+        occasion,
+        package: packageType,
+        created_at: new Date().toISOString(),
+      }]);
+
+    if (error) {
+      console.error('❌ Supabase insert error:', error);
+      return NextResponse.json({ error: error.message }, { status: 500 });
+    }
+
+    console.log('✅ Lead saved:', data);
+    return NextResponse.json({ message: 'Lead saved', data });
+
+  } catch (err) {
+    console.error('🔥 Unexpected server error:', err);
+    return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
   }
-
-  return NextResponse.json({ message: 'Lead saved', data });
 }
