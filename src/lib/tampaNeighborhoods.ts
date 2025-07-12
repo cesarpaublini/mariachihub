@@ -8,4 +8,5 @@ export const tampaNeighborhoods = [
   'new-tampa',
   'seminole-heights',
   'wesley-chapel',
+  'clearwater',
 ] 
