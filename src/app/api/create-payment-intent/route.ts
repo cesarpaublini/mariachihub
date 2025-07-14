@@ -14,7 +14,7 @@ export async function POST(req: Request) {
     const paymentIntent = await stripe.paymentIntents.create({
       amount: Math.round(amount * 100),
       currency: 'usd',
-      description: `MariachiHub Booking - ${bookingData.fullName}`,
+              description: `BookMariachi Booking - ${bookingData.fullName}`,
       metadata: {
         email: bookingData.email,
         date: bookingData.date,

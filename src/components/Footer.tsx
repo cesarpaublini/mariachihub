@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
-            <h3 className="text-2xl font-bold text-red-400 mb-4">MariachiHub</h3>
+            <h3 className="text-2xl font-bold text-red-400 mb-4">BookMariachi</h3>
             <p className="text-gray-300 mb-4">
               Connecting you with the finest mariachi bands across the United States. 
               Book authentic Mexican music for your special occasions.
@@ -75,7 +75,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li className="text-gray-300">
-                info@mariachihub.com
+                info@bookmariachi.com
               </li>
               <li className="text-gray-300">
                 (555) 123-4567
@@ -86,7 +86,7 @@ export default function Footer() {
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
           <p className="text-gray-400">
-            © 2024 MariachiHub. All rights reserved.
+            © 2024 BookMariachi. All rights reserved.
           </p>
         </div>
       </div>

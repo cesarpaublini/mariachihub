@@ -27,7 +27,7 @@ export default function DetailsPage() {
 
   // Load existing booking data from localStorage
   useEffect(() => {
-    const saved = localStorage.getItem('mariachihub_booking')
+    const saved = localStorage.getItem('bookmariachi_booking')
     if (saved) {
       const parsed = JSON.parse(saved)
       setBookingData(parsed)
@@ -54,7 +54,7 @@ export default function DetailsPage() {
     }
     
     setBookingData(newData)
-    localStorage.setItem('mariachihub_booking', JSON.stringify(newData))
+    localStorage.setItem('bookmariachi_booking', JSON.stringify(newData))
   }
 
   const validateForm = () => {

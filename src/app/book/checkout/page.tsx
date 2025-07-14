@@ -28,7 +28,7 @@ export default function CheckoutPage() {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    const saved = localStorage.getItem('mariachihub_booking')
+    const saved = localStorage.getItem('bookmariachi_booking')
     if (saved) {
       const parsed = JSON.parse(saved)
       setBookingData(parsed)
@@ -52,9 +52,9 @@ export default function CheckoutPage() {
   const handlePaymentSuccess = (paymentIntentId: string) => {
     const updatedData = { ...bookingData, paymentIntentId }
     setBookingData(updatedData)
-    localStorage.setItem('mariachihub_booking', JSON.stringify(updatedData))
+    localStorage.setItem('bookmariachi_booking', JSON.stringify(updatedData))
     setTimeout(() => {
-      localStorage.removeItem('mariachihub_booking')
+      localStorage.removeItem('bookmariachi_booking')
       router.push('/thank-you')
     }, 1000)
   }

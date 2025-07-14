@@ -36,7 +36,7 @@ export default function About() {
           
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              About MariachiHub
+              About BookMariachi
             </h1>
             <p className="text-xl md:text-2xl max-w-3xl mx-auto text-red-100">
               Connecting communities with authentic Mexican music and culture since 2018
@@ -55,7 +55,7 @@ export default function About() {
             
             <div className="prose prose-lg mx-auto text-gray-700">
               <p className="text-xl mb-6">
-                MariachiHub was born from a simple idea: to make authentic Mexican music 
+                BookMariachi was born from a simple idea: to make authentic Mexican music 
                 accessible to everyone, everywhere. Founded in 2018 by a group of passionate 
                 musicians and entrepreneurs, we recognized that finding professional mariachi 
                 bands was often difficult and unreliable.
@@ -136,7 +136,7 @@ export default function About() {
                 Our Team
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Meet the passionate individuals behind MariachiHub who work tirelessly 
+                Meet the passionate individuals behind BookMariachi who work tirelessly 
                 to bring authentic Mexican music to your events.
               </p>
             </div>

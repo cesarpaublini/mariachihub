@@ -11,7 +11,7 @@ export default function ThankYou() {
 
   useEffect(() => {
     // Try to get booking data from localStorage (in case user refreshes)
-    const saved = localStorage.getItem('mariachihub_booking')
+    const saved = localStorage.getItem('bookmariachi_booking')
     if (saved) {
       setBookingData(JSON.parse(saved))
     }
@@ -36,7 +36,7 @@ export default function ThankYou() {
               Your Mariachi Booking is Confirmed
             </p>
             <p className="text-lg text-red-100 max-w-2xl mx-auto">
-              Thank you for choosing MariachiHub! Your payment has been processed and 
+              Thank you for choosing BookMariachi! Your payment has been processed and 
               your booking is confirmed. We&apos;re excited to make your celebration unforgettable.
             </p>
           </div>
@@ -180,7 +180,7 @@ export default function ThankYou() {
                     </svg>
                   </div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">Email Us</h3>
-                  <p className="text-red-600 font-semibold text-lg">info@mariachihub.com</p>
+                  <p className="text-red-600 font-semibold text-lg">info@bookmariachi.com</p>
                   <p className="text-sm text-gray-500">Response within 24 hours</p>
                 </div>
               </div>

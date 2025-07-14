@@ -21,7 +21,7 @@ export default function AvailabilityPage() {
   const [errors, setErrors] = useState<Record<string, string>>({})
 
   useEffect(() => {
-    const saved = localStorage.getItem('mariachihub_booking')
+    const saved = localStorage.getItem('bookmariachi_booking')
     if (saved) {
       const parsed = JSON.parse(saved)
       setBookingData(parsed)
@@ -31,7 +31,7 @@ export default function AvailabilityPage() {
   const updateBookingData = (updates: Partial<BookingData>) => {
     const newData = { ...bookingData, ...updates }
     setBookingData(newData)
-    localStorage.setItem('mariachihub_booking', JSON.stringify(newData))
+    localStorage.setItem('bookmariachi_booking', JSON.stringify(newData))
   }
 
   const handleDateChange = (date: string) => updateBookingData({ date })

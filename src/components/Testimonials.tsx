@@ -21,7 +21,7 @@ const testimonials = [
     event: 'Corporate Event',
     location: 'Los Angeles, CA',
     rating: 5,
-    text: 'We hired MariachiHub for our company\'s Hispanic Heritage Month celebration. The performance was outstanding and really brought the culture to life for our team.',
+    text: 'We hired BookMariachi for our company\'s Hispanic Heritage Month celebration. The performance was outstanding and really brought the culture to life for our team.',
     avatar: 'JS'
   },
   {
