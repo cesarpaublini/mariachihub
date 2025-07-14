@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Breadcrumbs from '@/components/Breadcrumbs'
@@ -14,12 +14,31 @@ export default function Contact() {
     subject: '',
     message: ''
   })
+  
+  const [toast, setToast] = useState<{
+    show: boolean;
+    type: 'success' | 'error';
+    message: string;
+  }>({
+    show: false,
+    type: 'success',
+    message: ''
+  })
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     })
+  }
+
+  const showToast = (type: 'success' | 'error', message: string) => {
+    setToast({ show: true, type, message })
+    
+    // Hide toast after 5 seconds
+    setTimeout(() => {
+      setToast({ show: false, type: 'success', message: '' })
+    }, 5000)
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -36,8 +55,8 @@ export default function Contact() {
         throw new Error('Failed to send message');
       }
 
-      // Show success message
-      alert('Thank you for your message! We\'ll get back to you soon.')
+      // Show success toast
+      showToast('success', '✅ Thank you for your message! We\'ll get back to you soon.')
       
       // Reset form
       setFormData({
@@ -50,7 +69,7 @@ export default function Contact() {
       
     } catch (err) {
       console.error('Failed to send contact message:', err);
-      alert('Sorry, there was an error sending your message. Please try again or call us directly.')
+      showToast('error', '❌ Sorry, something went wrong. Please try again or call us directly.')
     }
   }
 
@@ -180,7 +199,7 @@ export default function Contact() {
                         required
                         value={formData.name}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent text-black"
                         placeholder="Your full name"
                       />
                     </div>
@@ -196,7 +215,7 @@ export default function Contact() {
                         required
                         value={formData.email}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent text-black"
                         placeholder="your@email.com"
                       />
                     </div>
@@ -213,7 +232,7 @@ export default function Contact() {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent text-black"
                         placeholder="(754) 800-5079"
                       />
                     </div>
@@ -228,7 +247,7 @@ export default function Contact() {
                         required
                         value={formData.subject}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent text-black"
                       >
                         <option value="">Select a subject</option>
                         <option value="booking">Booking Inquiry</option>
@@ -251,7 +270,7 @@ export default function Contact() {
                       required
                       value={formData.message}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent text-black"
                       placeholder="Tell us how we can help you..."
                     />
                   </div>
@@ -314,6 +333,22 @@ export default function Contact() {
           </div>
         </section>
       </main>
+      
+      {/* Toast Notification */}
+      {toast.show && (
+        <div className="fixed bottom-4 right-4 z-50">
+          <div className={`
+            px-6 py-4 rounded-lg shadow-lg text-white font-medium transition-all duration-300 ease-in-out
+            ${toast.type === 'success' 
+              ? 'bg-green-600 hover:bg-green-700' 
+              : 'bg-red-600 hover:bg-red-700'
+            }
+          `}>
+            {toast.message}
+          </div>
+        </div>
+      )}
+      
       <Footer />
     </div>
   )
