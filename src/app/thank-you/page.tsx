@@ -169,7 +169,7 @@ export default function ThankYou() {
                     </svg>
                   </div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">Call Us</h3>
-                  <p className="text-red-600 font-semibold text-lg">(555) 123-4567</p>
+                  <p className="text-red-600 font-semibold text-lg">(754) 800-5079</p>
                   <p className="text-sm text-gray-500">Available 24/7</p>
                 </div>
 

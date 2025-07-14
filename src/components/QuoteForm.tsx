@@ -89,7 +89,7 @@ export default function QuoteForm() {
                   value={formData.phone}
                   onChange={handleChange}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent"
-                  placeholder="(555) 123-4567"
+                  placeholder="(754) 800-5079"
                 />
               </div>
 

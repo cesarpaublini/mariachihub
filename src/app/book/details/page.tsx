@@ -278,7 +278,7 @@ export default function DetailsPage() {
                     value={bookingData.phone || ''}
                     onChange={(e) => updateBookingData({ phone: e.target.value })}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent placeholder-gray-500 text-black"
-                    placeholder="(555) 123-4567"
+                                          placeholder="(754) 800-5079"
                   />
                 </div>
 

@@ -78,7 +78,7 @@ export default function Footer() {
                 info@bookmariachi.com
               </li>
               <li className="text-gray-300">
-                (555) 123-4567
+                (754) 800-5079
               </li>
             </ul>
           </div>

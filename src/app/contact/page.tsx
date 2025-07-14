@@ -84,7 +84,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold text-gray-900 mb-2">Phone</h3>
-                      <p className="text-gray-600">(555) 123-4567</p>
+                      <p className="text-gray-600">(754) 800-5079</p>
                       <p className="text-sm text-gray-500">Available 24/7 for urgent bookings</p>
                     </div>
                   </div>
@@ -102,20 +102,7 @@ export default function Contact() {
                     </div>
                   </div>
 
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center text-white flex-shrink-0">
-                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-gray-900 mb-2">Office</h3>
-                      <p className="text-gray-600">123 Mariachi Street</p>
-                      <p className="text-gray-600">Tampa, FL 33602</p>
-                      <p className="text-sm text-gray-500">By appointment only</p>
-                    </div>
-                  </div>
+
 
                   <div className="flex items-start space-x-4">
                     <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center text-white flex-shrink-0">
@@ -203,7 +190,7 @@ export default function Contact() {
                         value={formData.phone}
                         onChange={handleChange}
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent"
-                        placeholder="(555) 123-4567"
+                        placeholder="(754) 800-5079"
                       />
                     </div>
 
@@ -276,7 +263,7 @@ export default function Contact() {
                 </h3>
                 <p className="text-gray-600">
                   We typically respond to all inquiries within 24 hours. For urgent bookings, 
-                  please call us directly at (555) 123-4567.
+                  please call us directly at (754) 800-5079.
                 </p>
               </div>
 
