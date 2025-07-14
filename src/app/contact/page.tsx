@@ -22,12 +22,36 @@ export default function Contact() {
     })
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission here
-    console.log('Contact form submitted:', formData)
-    // Show success message or redirect
-    alert('Thank you for your message! We\'ll get back to you soon.')
+    
+    try {
+      const response = await fetch('/api/save-contact-message', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+
+      // Show success message
+      alert('Thank you for your message! We\'ll get back to you soon.')
+      
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        subject: '',
+        message: ''
+      })
+      
+    } catch (err) {
+      console.error('Failed to send contact message:', err);
+      alert('Sorry, there was an error sending your message. Please try again or call us directly.')
+    }
   }
 
   const breadcrumbItems = [
