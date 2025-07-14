@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://bookmariachi.com
+
+# Sitemaps
+Sitemap: https://bookmariachi.com/sitemap.xml
