@@ -6,7 +6,6 @@ import { supabase } from '../../../lib/supabaseClient';
 
 export async function POST(req: Request) {
   const resend = new Resend(process.env.RESEND_API_KEY!); // Make sure this is in .env.local
-
   const data = await req.json();
   const { name, email, phone, subject, message } = data;
 
